@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Accessibility Quiz</title>
+</head>
+<body>
+
+    <header>
+
+        <img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="logo" id="logo">
+        <h1>HTML/CSS Quiz</h1>
+
+        <nav>
+
+            <!-- ul (unordered list) buat container list (li) dikasih marker
+                 black bullets secara default, setiap list harus dikasih elemen li -->
+            <ul>
+
+                <li><a accesskey="i" href="#student-info">INFO</a></li>
+                <li><a accesskey="h" href="#html-questions">HTML</a></li>
+                <li><a accesskey="c" href="#css-questions">CSS</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post">
+
+            <!-- STUDENT INFO QUIZ SECTION -->
+            <section aria-labelledby="student-info" role="region">
+
+                <!-- SECTION TITLE -->
+                <h2 id="student-info">Student Info</h2>
+
+                <div class="info">
+                    <!-- STUDENT NAME -->
+                    <label for="student-name">Name :</label>
+                    <input id="student-name" type="text" name="student name" >
+
+                </div>
+
+                <div class="info">
+                    <!-- STUDENT EMAIL -->
+                    <label for="student-email">Email :</label>
+                    <input id="student-email" type="email" name="student email" placeholder="Input your email here..">
+
+                </div>
+
+                <div class="info">
+                    <!-- STUDENT DATE OF BIRTH -->
+                    <label for="student-dobirth">D.O.B.<span class="sr-only">(Date of Birth)</span>:</label>
+                    <input id="student-dobirth" type="date" name="student date of birth">
+
+                </div>
+
+            </section>
+            <!-- STUDENT INFO QUIZ SECTION -->
+
+            <!-- HTML QUIZ SECTION -->
+            <section aria-labelledby="html-questions" role="region">
+
+                <!-- SECTION TITLE -->
+                <h2 id="html-questions">HTML Questions</h2>
+
+                <!-- QUESTION #1 -->
+                <div class="question-block">
+
+                    <p>1</p>
+                    <fieldset name="html question one" class="question">
+                        <legend>
+                            The legend element represents a caption for the content of its parent fieldset element
+                        </legend>
+                        <ul class="answers-list">
+                            <li>
+                                <label for="q1-a1">
+                                    <input name="q1answer" id="q1-a1" type="radio" value="true">
+                                    True
+                                </label>
+                            </li>
+                            <li>
+                                <label for="q1-a2">
+                                    <input name="q1answer" id="q1-a2" type="radio" value="false">
+                                    False
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+
+                </div>
+
+                <div class="question-block">
+
+                    <!-- QUESTION #2 -->
+                    <p>2</p>
+                    <fieldset name="html question two" class="question">
+                        <legend>
+                            A label element nesting an input element is required to have a for attribute with the same value as the input's id
+                        </legend>
+                        <ul class="answers-list">
+                            <li>
+                                <label for="q2-a1">
+                                    <input name="q2answer" id="q2-a1" type="radio" value="true">
+                                    True
+                                </label>
+                            </li>
+                            <li>
+                                <label for="q2-a2">
+                                    <input name="q2answer" id="q2-a2" type="radio" value="false">
+                                    False
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+
+                </div>
+
+            </section>
+            <!-- HTML QUIZ SECTION -->
+
+            <!-- CSS QUIZ SECTION -->
+            <section aria-labelledby="css-questions" role="region">
+
+                <h2 id="css-questions">CSS Questions</h2>
+
+                <div class="formrow">
+
+                    <div class="question-block">
+                        <label for="frontend-or-no">Are you a frontend developer?</label>
+                    </div>
+
+                    <div class="answer">
+                        <select required name="r u a frontend?" id="frontend-or-no">
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="question-block">
+                        <label for="any-questions">Do you have any questions:</label>
+                    </div>
+
+                    <div class="answer">
+                        <textarea name="any questions" id="any-questions" cols="30" rows="10" placeholder="do u guys sells anime figure?"></textarea>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- CSS QUIZ SECTION -->
+
+            <!-- SUBMIT BUTTON -->
+            <button type="submit">Send</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+
+        <address>
+            <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+            San Francisco<br />
+            California<br />
+            USA
+        </address>
+
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+body{
+    width: 100%;
+    /* vh artinya viewport height */
+    height: 100vh;
+    /* margin 0 buat ngilangin horizontal scroll bar */
+    margin: 0;
+
+    background-color: #1b1b32;
+    /* ini text color */ color: #f5f6f7;
+
+    font-family: Tahoma;
+    font-size: 16px;
+
+    /* text-align: center; */
+}
+
+fieldset{
+    /* putting none on border removes the border */
+    border: none;
+    /* kode di bawah ngasih perintah border yang dibawah biar di warnain abu2
+       dengan hex color supaya bisa misahin fieldset masing2 */
+    border-bottom: 3px solid #3b3b4f;
+    padding: 2rem 0;
+    /* on this case code di atas pake 0 di value ke dua buat ngasih tau kalo
+       padding left dan right itu gaada, kalo value pertama 2rem artinya
+       padding top dan bottom ada value 2 root em */
+    /* putting 0 on padding removes the padding */
+    /* padding-left: 0; */
+    /* padding-right: 0; */
+}
+
+form{
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 300px;
+    width: 60vw;
+    /* viewport unit buat scaling ukuran tergantung dari viewport browser
+       yang di buka, contoh di atas 60vw (viewport width) berarti ukuran 
+       width nya ngambil 60% dari viewport browser nya 
+       
+       ada beberapa variasi command viewport yaitu 
+       vh   (viewport height)
+       vmin (viewport minimum)
+       vmax (viewport maximum) */
+
+    padding-bottom: 2em;
+}
+
+h1, p{
+    /* em scaling compare to px kinda tergantung sama content  div (?) more
+       explanation later */
+    margin: 1em auto;
+    text-align: center;
+    /* careful not to type align-contentinstead use text-align (easy to miss)
+       for text, bukan align-text */
+}
+
+label{
+    display: block;
+    margin: 0.5rem 0;
+}
+
+/* perintah di bawah buat ngambil fieldset terakhir (last-of-type) untuk
+   di edit css nya, ini nama nya pseudo-class */
+fieldset:last-of-type{
+    border-bottom: none;
+}
+
+input, textarea, select{
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+    min-height: 2em;
+}
+
+input, textarea{
+    background-color: #0a0a23;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+}
+
+.inline{
+    /* width unset will remove rule which set all the input elements to
+       width: 100%. */
+    width: unset;
+
+    /* 
+    !!!IMPORTANT!!!
+    
+    keep in mind that setting both margin right and all other margin need
+    to pay attention to positioning of the code.
+    if you set the code margin 0 after the margin right 0.5em it will set
+    all the margin to 0 again.
+    but if you set the margin-right after the margin 0, it will set the
+    margin-right with its own code.
+
+    this will apply to all other css code like setting the padding, border, etc.
+    */
+    margin: 0;
+    margin-right: 0,5em;
+
+    vertical-align: middle;
+}
+
+/* attribute selector dibawah dapat dilakukan karena cuma dipilih yang
+   input type nya submit doang */
+input[type="submit"]{
+    display: block;
+    /* margin 0 auto berguna bikin component yg di edit bisa ke center sendiri */
+    margin: 1em auto;
+    width: 60%;
+    min-width: 300px;
+
+    height: 2em;
+    font-size: 1.1rem;
+
+    background-color: #3b3b4f;
+    border-color: white;
+}
+
+input[type="file"]{
+    padding: 1px 2px;
+}
+
+a{
+    color: #dfdfe2;
+}
